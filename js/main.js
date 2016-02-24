@@ -1,7 +1,7 @@
 $(document).ready(function() {
      var $gallery = $('#FlickrImages');                                            
     //Flickr Integration
-    $.getJSON("https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=c7164eb5743c0f064666cdb4856e0a11&user_id=140424609@N03&format=json", function(data){
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?id=140424609@N03&lang=en-us&format=json&jsoncallback=?", function(data){
         $.each(data.items, function(i,item){
             if(i<=9999){
                 $("<img/>").attr("src", item.media.m).appendTo($gallery)
